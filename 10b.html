@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Map
+    </title>
+</head>
+<body>
+    <script>
+       let mymap= new Map();
+        let choice;
+        while(choice != 4)
+        {
+             choice =parseInt(prompt("ENTER 1 for add, 2 for retrieval,3 for display, 4 to exit"));
+
+            switch(choice)
+            {  
+                case 1: let key=prompt("Enter key ");
+                        let value=prompt("Enter value:");
+                        mymap.set(key,value);
+                        break;
+
+                case 2: let check=prompt("Enter key: ")
+                        if(mymap.has(check))
+                            alert(check+" has value "+ mymap.get(check));
+                        else
+                            alert("key not exist");
+                        break;
+                case 3: alert("map items are");
+                        for(let [key,value] of mymap)
+                            alert(key+":"+value);
+                        break;
+                case 4: break;        
+            }
+        }
+    </script>
+</body>
