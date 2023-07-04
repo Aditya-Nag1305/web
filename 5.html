@@ -17,7 +17,7 @@
                 encryptedText += currentChar;
                 } else {
                 // Encrypt the character by shifting it by the given amount
-                const encryptedIndex = (index + shift) % 26;
+                let encryptedIndex = (index + shift) % 26;
                 encryptedText += alphabet[encryptedIndex];
                 }
             }
