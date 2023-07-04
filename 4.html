@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Jump Search
+    </title>
+</head>
+<body>
+    <script>
+        
+  
+  function jumpSearch(array, key) 
+  {
+    let size = array.length;
+    let jump = Math.sqrt(size);
+    let start_index = 0;
+
+    while (start_index < size) {
+        if (array[start_index + jump - 1] < key) 
+        {
+            start_index += jump;
+        } else 
+        {
+            break;
+        }
+    }
+
+    for (let i = start_index; i < size; i++) 
+    {
+        if (array[i] === key) 
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+const key = prompt("Enter the key: ");
+const array = prompt("Enter the list of numbers: ").split(" ");
+
+const index = jumpSearch(array, key);
+
+if (index === -1) {
+  alert("The key was not found.");
+} else {
+  alert("The key was found at index " + index);
+}
+
+    </script>
+</body>
+</html>

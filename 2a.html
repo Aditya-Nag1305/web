@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Promises
+    </title>
+</head>
+<body>
+    <script>
+    
+        function check(){
+                return new Promise((resolve,reject)=> {
+                    setTimeout(()=>{
+                        let userIn= parseInt(prompt("Enter a number: "));
+                        if(userIn > 10)
+                        {
+                            resolve(userIn);
+                        }
+                        else if(userIn == 10)
+                        {
+                            resolve(userIn);
+                        }
+                        else
+                        {
+                            reject(userIn);
+                        }
+                    }
+                    ,1000)
+                })
+        }
+
+        check().then((result)=> {
+            if(result > 10)
+                alert(result + " is greater than 10");
+         return result})
+        .then((result)=>{ 
+            if(result == 10)
+                alert(result + " is equal to 10")})
+        .catch((result)=> alert(result+" is less than 10"))
+
+
+
+
+    </script>
+</body>
+</html>

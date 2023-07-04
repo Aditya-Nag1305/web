@@ -1,0 +1,16 @@
+<html>
+    <head><title>sam</title></head>
+    <body>
+        <button id="button">click</button>
+        <script>
+        document.getElementById("button").addEventListener("click", myfunc)
+        function myfunc(){
+            let a = prompt("Enter a string");
+            let b=a.split('').sort().join('');
+            alert(b);
+        }
+
+
+        </script>
+    </body>
+</html>

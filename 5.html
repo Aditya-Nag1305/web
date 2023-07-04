@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Ceaser Cipher</title>
+</head>
+<body>
+    <script>
+        function encrypt(text, shift) {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            let encryptedText = "";
+
+            for (let i = 0; i < text.length; i++) {
+                const currentChar = text[i];
+                const index = alphabet.indexOf(currentChar);
+
+                // If the character is not a letter, just add it to the encrypted text
+                if (index === -1) {
+                encryptedText += currentChar;
+                } else {
+                // Encrypt the character by shifting it by the given amount
+                const encryptedIndex = (index + shift) % 26;
+                encryptedText += alphabet[encryptedIndex];
+                }
+            }
+
+            return encryptedText;
+}
+
+const text = prompt("Enter the text to encrypt: ");
+const shift = parseInt(prompt("Enter the shift pattern: "));
+
+const encryptedText = encrypt(text, shift);
+
+alert(encryptedText);
+
+</script>
+
+</body>
+</html>
