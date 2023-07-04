@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Set
+    </title>
+</head>
+<body>
+    <script>
+        let myset= new Set();
+        while(choice!= 4)
+        {
+            let choice =parseInt(prompt("ENTER 1 for add, 2 for retrieval,3 for display, 4 to exit"));
+
+            switch(choice)
+            {  
+                case 1: let num=parseInt(prompt("Enter data "))
+                        myset.add(num);
+                        break;
+                case 2: let key=parseInt(prompt("Enter key: "))
+                        if(myset.has(key))
+                            alert("key exists");
+                        else
+                            alert("key not exist");
+                        break;
+                case 3: for(let item of myset)
+                        {
+                            alert(item);
+                        }
+                        break;
+                case 4: break;        
+            }
+        }
+    </script>
+</body>
+</html>
+
