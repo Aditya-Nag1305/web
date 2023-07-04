@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Events
+    </title>
+</head>
+<body>
+    
+    <button id="button"
+    onclick="onClick()" 
+    onkeydown="onKeyDown(event)"> On Click Event</button>
+
+    <h1 id="mouse"  
+    onmouseover="onMouseOver()" 
+    onmouseout="onMouseOut()"> Mouse event </h1>
+    
+    <input id="select" 
+    onchange="onChange()">Change event</input>
+
+    <script>
+        function onClick(){
+            alert("You clicked the button");
+        }
+        function onKeyDown(){
+            alert("You pressed the " + event.key +  "Key");
+        }
+        function onChange(){
+            alert("Input Value has been changed");
+        }
+        function onMouseOver(){
+            document.getElementById("mouse").style.color="blue";
+        }
+        function onMouseOut(){
+            document.getElementById("mouse").style.color="red"
+        }
+    </script>
+
+</body>
+</html>
