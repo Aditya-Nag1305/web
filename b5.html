@@ -1,0 +1,48 @@
+<html>
+    <head><title>booking</title></head>
+    <body>
+        <script>
+            function bookFlight() {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const isFlightBooked = true;
+
+                  if (isFlightBooked) {
+                    alert("Flight booked successfully.");
+                    resolve();
+                  } else {
+                    alert("Failed to book flight.");
+                    reject();
+                  }
+                }, 2000); 
+              });
+            }
+
+            function bookHotel() {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const isHotelBooked = true;
+
+                  if (isHotelBooked) {
+                    alert("Hotel booked successfully.");
+                    resolve();
+                  } else {
+                    alert("Failed to book hotel.");
+                    reject();
+                  }
+                }, 2000); 
+              });
+            }
+
+            bookFlight()
+              .then(() => bookHotel())
+              .then(() => {
+                alert("Booking process completed.");
+              })
+              .catch(() => {
+                alert("Booking process failed.");
+              });
+
+        </script>
+    </body>
+</html>
