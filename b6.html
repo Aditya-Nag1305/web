@@ -1,0 +1,24 @@
+<html>
+    <head><title>weight</title></head>
+    <body>
+        <script>
+            let kg=parseInt(prompt("Enter weight in kgs"));
+         
+            const checkWeight = (kg) =>{ 
+                const lbs = kg * 2.2;
+                return lbs};  
+            
+            const weight=checkWeight(kg);
+            alert("weight in lbs is "+ weight);
+
+            if (checkWeight > 150) {
+            alert("obese");
+            } else if (checkWeight >= 100 && checkWeight <= 150) {
+            alert("you are ok");
+            } else {
+            alert("underweight");
+            }
+        
+        </script>
+    </body>
+</html>
