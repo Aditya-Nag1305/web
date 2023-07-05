@@ -1,0 +1,32 @@
+<html>
+    <head><title></title></head>
+    <body>
+        <script>
+            const map = new Map();
+            const object = {};
+
+            for (let i = 0; i < 100000; i++) {
+                map.set(i, i);
+                object[i] = i;
+            }
+
+            const mapStartTime = performance.now();
+            for (let i = 0; i < 50000; i++) {
+                map.delete(i);
+            }
+            const mapEndTime = performance.now();
+
+            const objectStartTime = performance.now();
+            for (let i = 0; i < 50000; i++) {
+                delete object[i];
+            }
+            const objectEndTime = performance.now();
+
+            const mapTime = mapEndTime - mapStartTime;
+            const objectTime = objectEndTime - objectStartTime;
+
+            alert("Map time: " + mapTime + " milliseconds");
+            alert("Object time: " + objectTime + " milliseconds");
+        </script>
+    </body>
+</html>
