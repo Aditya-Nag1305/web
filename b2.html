@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>set vs arr</title>
+</head>
+<body>
+     <script>
+       const myset = new Set();
+       let array = [];
+
+       for (let i = 0; i < 100000; i++) {
+        myset.add(i);
+        array.push(i);
+       }
+
+       const setStart = window.performance.now();
+       myset.has(99999);
+       const setEnd = window.performance.now();
+
+       const setTime = setEnd - setStart;
+
+       const arrStart = window.performance.now();
+       array.includes(99999);
+       const arrEnd = window.performance.now();
+
+       const arrTime = arrEnd - arrStart;
+
+       alert("set time is: " + setTime + "\narray time is: " + arrTime);
+    </script>
+</body>
+</html>
