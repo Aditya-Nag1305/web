@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visitor Count</title>
+</head>
+<body>
+  <h1>Welcome to My Website</h1>
+
+  <p>Number of Visitors: <h1 id="visitorCount">0</h1></p>
+
+  <script>
+    function update()
+    {
+      if(localStorage.getItem("visitor")){
+        let count= parseInt(localStorage.getItem("visitor"));
+        count++;
+        localStorage.setItem("visitor",count);
+        document.getElementById("visitorCount").textContent =count;
+      }
+      else
+      {
+        localStorage.setItem("visitor",1);
+        document.getElementById("visitorCount").textContent=1;
+      }
+    }
+    window.onload(update());
+
+  </script>
+</body>
+</html>
