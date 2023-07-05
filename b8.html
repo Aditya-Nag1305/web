@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email</title>
+    <body>
+    <script>
+        function validateEmail(email) {
+          var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return pattern.test(email);
+          }
+
+          const emailInput = prompt("Enter an email address:");
+          const isValidEmail = validateEmail(emailInput);
+
+          if (isValidEmail) {
+            alert(emailInput + " is a valid email address.");
+          } else {
+            alert(emailInput + " is an invalid email address.");
+          }
+
+    </script>
+</body>
+</html>
