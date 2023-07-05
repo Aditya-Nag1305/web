@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Infection Checker</title>
+  </head>
+  <body>
+    <script>
+      function check() {
+        const virus = prompt("Enter virus composition:").toLowerCase();
+        const blood = prompt("Enter blood composition:").toLowerCase();
+        const isPositive = isSubsequence(virus, blood);
+        if (isPositive) {
+          alert("POSITIVE");
+        } else {
+          alert("NEGATIVE");
+        }
+      }
+
+      function isSubsequence(str1, str2) {
+        let i = 0;
+        let j = 0;
+
+        while (i < str1.length && j < str2.length) {
+          if (str1.charAt(i) === str2.charAt(j)) {
+            j++;
+          }
+          i++;
+        }
+
+        return j === str2.length;
+      }
+
+      check();
+    </script>
+  </body>
+</html>
